@@ -12,6 +12,14 @@ class Home extends BaseController
         echo view('loginAdmin');
     }
 
+    public function daftarPaket() {
+        echo view('daftarPaket');
+    }
+
+    public function tambahPaket() {
+        echo view('tambahPaket');
+    }
+
     public function about(){
         echo view('about');
     }
