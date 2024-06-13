@@ -12,7 +12,7 @@
 
                 <!-- Login Box -->
                 <div class="d-flex justify-content-center mt-2 w-10">
-                    <form method="POST">
+                    <form method="POST" action="<?= base_url('loginAdmin') ?>">
                         <div class="mb-3">
                             <label for="inputUsername" class="form-label">Username</label>
                             <input type="text" class="form-control" name="user_input">

@@ -33,7 +33,7 @@
                         data-accordion="false">
                         <!-- Dashboard -->
                         <li class="nav-item">
-                            <a href="daftar_artikel.php" class="nav-link">
+                            <a href="daftarPaket.php" class="nav-link">
                                 <i class="nav-icon fas fa-regular fa-newspaper"></i>
                                 <p>Daftar Paket</p>
                             </a>

@@ -15,25 +15,30 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid box">
-            <h1>Tambah Paket Wedding</h1>
-            <form action="<?= base_url('tambahPaket') ?>" method="POST" enctype="multipart/form-data" data-insert-form>
+            <h1>Update Paket Wedding</h1>
+            <form action="<?= base_url('updatePaket/' . $data['id_paket'])?>" method="POST"
+                enctype="multipart/form-data" data-update-form>
+                <input type="hidden" name="_method" value="POST">
 
                 <!-- Jenis -->
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Jenis</label>
-                    <input type="text" class="form-control" name="jenis">
+                    <input type="text" class="form-control" name="jenis"
+                        value="<?= isset($data['jenis']) ? $data['jenis'] : '' ?>" required>
                 </div>
 
                 <!-- Harga -->
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Harga (Rp)</label>
-                    <input type="number" class="form-control" name="harga">
+                    <input type="number" class="form-control" name="harga"
+                        value="<?= isset($data['harga']) ? $data['harga'] : '' ?>" required>
                 </div>
 
                 <!-- Fasilitas -->
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Fasilitas</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="fasilitas">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="fasilitas"
+                        value="<?= isset($data['fasilitas']) ? $data['fasilitas'] : '' ?>" required>
                         </textarea>
                 </div>
 
@@ -45,7 +50,7 @@
 
                 <!-- Button -->
                 <div class="button-placements grid">
-                    <button type="submit" class="btn btn-primary text-center w-100 mb-3">Tambah Paket Baru</button>
+                    <button type="submit" class="btn btn-primary text-center w-100 mb-3">Update Paket</button>
                 </div>
 
             </form>
@@ -57,14 +62,14 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const insertData = document.querySelectorAll('form[data-insert-form]');
+    const updateData = document.querySelectorAll('form[data-update-form]');
 
-    insertData.forEach(form => {
+    updateData.forEach(form => {
         form.addEventListener("submit", function(event) {
             event.preventDefault();
             Swal.fire({
-                title: "Tambah data berhasil",
-                text: "Klik OK untuk menampilkan data",
+                title: "Update berhasil",
+                text: "Data berhasil di-update!",
                 icon: "success",
                 confirmButtonText: "OK"
             }).then((result) => {
