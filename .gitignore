@@ -2,6 +2,9 @@
 # Operating Specific Junk Files
 #-------------------------
 
+# Upload folder
+upload/
+
 # OS X
 .DS_Store
 .AppleDouble
