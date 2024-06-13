@@ -24,6 +24,7 @@
                 <a class="nav-item nav-link active" href="<?= base_url('')?>">Home <span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="<?= base_url('about')?>">About</a>
+                <a class="btn btn-info" href="<?= base_url('loginAdmin')?>">Login Admin</a>
             </div>
         </div>
     </nav>

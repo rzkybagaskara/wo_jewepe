@@ -1,7 +1,9 @@
-<body>
+<?php include('header.php') ?>
+
+<body class="bg-info bg-gradient">
     <section class="section vh-100">
         <div class="pt-5">
-            <div class="login-box py-5 bg-white w-25 container-fluid border rounded">
+            <div class="login-box py-5 w-25 bg-white container-fluid border rounded">
                 <!-- Welcome Message -->
                 <div class="message text-center">
                     <h3>Selamat Datang</h3>
