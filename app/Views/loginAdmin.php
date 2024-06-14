@@ -15,7 +15,7 @@
                 <!-- Welcome Message -->
                 <div class="message text-center">
                     <h3>Selamat Datang</h3>
-                    <h3>Admin WO JeWePe</h3>
+                    <h3>Admin Sigma WO</h3>
                 </div>
 
                 <!-- Login Box -->

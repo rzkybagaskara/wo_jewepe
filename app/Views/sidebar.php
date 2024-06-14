@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wedding Organizer JeWePe Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" />
@@ -22,7 +22,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
-                <span class="brand-text font-weight-light">Admin Dashboard</span>
+                <span class="brand-text font-weight-light">Sigma WO Dashboard</span>
             </a>
 
             <!-- Sidebar -->

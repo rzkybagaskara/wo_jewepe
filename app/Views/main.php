@@ -1,11 +1,13 @@
 <?php include('header.php') ?>
+<?php include('hero.php') ?>
 
-<div class="header-text text-center pb-3 pt-3">
+<!-- <div class="header-text text-center pb-3 pt-3">
     <h3 class="mt-2 ml-1 pb-2">Wedding Organizer JeWePe</h3>
     <p class="mt-2">Make your wedding more special!</p>
-</div>
+</div> -->
 
 <div class="container-card">
+    <h3 class="mt-3 ml-1 pb-2 text-center">Paket Wedding</h3>
     <div class="row p-1">
         <?php foreach ($paket as $index => $paket) : ?>
         <?php $image_url = '../upload/post/' ?>
@@ -24,72 +26,4 @@
     </div>
 </div>
 
-
-<div class="container-form">
-    <section class="order-form m-4">
-        <div class="container pt-4">
-            <h4 class="text-center">Order Form</h4>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="row mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label">Nama</label>
-                        </div>
-                        <div class="col-12">
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="text" id="form1" class="form-control order-form-input" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3 mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label">Email</label>
-                        </div>
-                        <div class="col-12">
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="email" id="form3" class="form-control order-form-input" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3 mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label">Alamat Pemesanan</label>
-                        </div>
-                        <div class="col-12">
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="text" id="form4" class="form-control order-form-input" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="row mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label">Jenis Paket</label>
-                        </div>
-                        <div class="col-12">
-                            <div data-mdb-input-init class="form-outline">
-                                <input type="text" id="form5" class="form-control order-form-input" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3 mx-4">
-                        <div class="col-12">
-                            <label class="order-form-label" for="date-picker-example">Tanggal Pernikahan</label>
-                        </div>
-                        <div class="col-12">
-                            <div data-mdb-input-init class="form-outline datepicker" data-mdb-toggle-button="false">
-                                <input type="text" class="form-control order-form-input" id="datepicker1"
-                                    data-mdb-toggle="datepicker" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-3">
-                    <button type="button" data-mdb-button-init id="btnSubmit" data-mdb-ripple-init
-                        class="btn btn-primary d-block mx-auto btn-submit">Order Paket</button>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
+<?php include('footer.php') ?>

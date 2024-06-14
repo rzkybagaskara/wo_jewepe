@@ -18,29 +18,38 @@
                 <thead>
                     <tr class="bg-dark text-white">
                         <th scope="col">Nomor</th>
-                        <th scope="col">Jenis</th>
-                        <th scope="col">Fasilitas</th>
-                        <th scope="col">Gambar</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">Jenis Paket</th>
+                        <th scope="col">Tanggal Pemesanan</th>
+                        <th scope="col">Status Pemesanan</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Loop untuk tampil daftar paket -->
-                    <?php foreach ($paket as $index => $paket) : ?>
-                    <?php $image_url = '../upload/post/' ?>
+                    <!-- Loop untuk tampil daftar pesanan -->
+                    <?php foreach ($pesan as $index => $pesanan) :
+                        //Set status default pesanan menjadi Requested
+                            if (!isset($pesanan['status']) || empty($pesanan['status'])) {
+                                $pesanan['status'] = 'Requested';
+                            }
+                        ?>
                     <th scope="row"><?= $index + 1 ?></th>
-                    <td><?= $paket['jenis'] ?></td>
-                    <td><?= $paket['fasilitas'] ?></td>
-                    <td><img src="<?= $image_url . $paket['gambar'] ?>" alt="Gambar Paket"
-                            style="width:150px; height:150px;">
-                    </td>
+                    <td><?= $pesanan['nama_cust'] ?></td>
+                    <td><?= $pesanan['email_cust'] ?></td>
+                    <td><?= $pesanan['alamat'] ?></td>
+                    <td><?= $pesanan['jenis'] ?></td>
+                    <td><?= $pesanan['tanggal'] ?></td>
+                    <!-- set default status pesanan yakni Requested dan di sort berdasarkan status -->
+                    <td><?= $pesan['status'] ?></td>
                     <td>
-                        <form action="<?= base_url('updatePaket/' . $paket['id_paket']) ?>" method="POST"
+                        <form action="<?= base_url('updatePesanan/' . $pesan['email_cust']) ?>" method="POST"
                             style="display: inline;">
                             <input type="hidden" name="_update" value="POST">
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
-                        <form action="<?= base_url('deletePaket/' . $paket['id_paket']) ?>" method="POST"
+                        <form action="<?= base_url('deletePesanan/' . $pesan['email_cust']) ?>" method="POST"
                             data-delete-form style="display: inline;">
                             <input type="hidden" name="_method" value="POST">
                             <button type="submit" class="btn btn-danger">Hapus</button>
