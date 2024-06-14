@@ -21,6 +21,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">Email</th>
                         <th scope="col">Alamat</th>
+                        <th scope="col">No Telp</th>
                         <th scope="col">Jenis Paket</th>
                         <th scope="col">Tanggal Pemesanan</th>
                         <th scope="col">Status Pemesanan</th>
@@ -31,25 +32,26 @@
                     <!-- Loop untuk tampil daftar pesanan -->
                     <?php foreach ($pesan as $index => $pesanan) :
                         //Set status default pesanan menjadi Requested
-                            if (!isset($pesanan['status']) || empty($pesanan['status'])) {
-                                $pesanan['status'] = 'Requested';
-                            }
+                           // if (!isset($pesanan['status']) || empty($pesanan['status'])) {
+                             //   $pesanan['status'] = 'Requested';
+                            //}
                         ?>
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $pesanan['nama_cust'] ?></td>
                     <td><?= $pesanan['email_cust'] ?></td>
-                    <td><?= $pesanan['alamat'] ?></td>
+                    <td><?= $pesanan['alamat_cust'] ?></td>
+                    <td><?= $pesanan['notelp_cust'] ?></td>
                     <td><?= $pesanan['jenis'] ?></td>
                     <td><?= $pesanan['tanggal'] ?></td>
                     <!-- set default status pesanan yakni Requested dan di sort berdasarkan status -->
-                    <td><?= $pesan['status'] ?></td>
+                    <td><?= $pesanan['status_pesan'] ?></td>
                     <td>
-                        <form action="<?= base_url('updatePesanan/' . $pesan['email_cust']) ?>" method="POST"
+                        <form action="<?= base_url('updatePesanan/' . $pesanan['email_cust']) ?>" method="POST"
                             style="display: inline;">
                             <input type="hidden" name="_update" value="POST">
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
-                        <form action="<?= base_url('deletePesanan/' . $pesan['email_cust']) ?>" method="POST"
+                        <form action="<?= base_url('deletePesanan/' . $pesanan['email_cust']) ?>" method="POST"
                             data-delete-form style="display: inline;">
                             <input type="hidden" name="_method" value="POST">
                             <button type="submit" class="btn btn-danger">Hapus</button>

@@ -1,11 +1,6 @@
 <?php include('header.php') ?>
 <?php include('hero.php') ?>
 
-<!-- <div class="header-text text-center pb-3 pt-3">
-    <h3 class="mt-2 ml-1 pb-2">Wedding Organizer JeWePe</h3>
-    <p class="mt-2">Make your wedding more special!</p>
-</div> -->
-
 <div class="container-card">
     <h3 class="mt-3 ml-1 pb-2 text-center">Paket Wedding</h3>
     <div class="row p-1">
