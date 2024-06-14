@@ -33,28 +33,28 @@
                         data-accordion="false">
                         <!-- Dashboard -->
                         <li class="nav-item">
-                            <a href="daftarPaket.php" class="nav-link">
+                            <a href="<?= base_url('daftarPaket') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-regular fa-newspaper"></i>
                                 <p>Daftar Paket</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="tambah_artikel.php" class="nav-link">
-                                <i class="nav-icon fas fa-regular fa-newspaper"></i>
+                            <a href="<?= base_url('daftarPesanan') ?>" class="nav-link">
+                                <i class="nav-icon fas fa-regular fa-cart-plus"></i>
                                 <p>Daftar Pesanan</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a href="tambah_artikel.php" class="nav-link">
-                                <i class="nav-icon fas fa-solid fa-plus"></i>
+                                <i class="nav-icon fas fa-solid fa-desktop"></i>
                                 <p>Website Info</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="main.php" class="nav-link">
+                            <a href="<?= base_url('/') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-solid fa-home"></i>
                                 <p>Kembali Ke Home</p>
                             </a>

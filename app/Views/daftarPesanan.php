@@ -13,8 +13,7 @@
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
-            <h3>Daftar Paket Wedding</h3>
-            <a href="<?= base_url('tambahPaket') ?>" class="btn btn-success mb-2">Tambah Paket</a>
+            <h3>Daftar Pesanan Paket Wedding</h3>
             <table class="table table-bordered text-center">
                 <thead>
                     <tr class="bg-dark text-white">
