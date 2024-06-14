@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\M_paket;
+use App\Models\M_pesanan;
 
-
+//Main Controller untuk Admin melakukan manajemen website
 class Home extends BaseController {
     protected $paketModel;
+    protected $pesananModel;
 
     public function __construct() {
         $this->paketModel = new M_paket();
+        $this->pesanModel= new M_pesanan();
     }
 
     public function index() {
@@ -26,6 +29,7 @@ class Home extends BaseController {
         echo view('loginAdmin');
     }
 
+    //Paket Wedding
     public function daftarPaket() {
         $paket = $this->paketModel->getAllPakets();
 
@@ -71,7 +75,6 @@ class Home extends BaseController {
             ];
 
             $this->paketModel->addPaket($data);
-
             return redirect()->to(base_url('/daftarPaket'));
         }
     }
@@ -130,7 +133,6 @@ class Home extends BaseController {
             }
 
             $this->paketModel->updatePaket($id, $data);
-
             return redirect()->to(base_url('/daftarPaket'));
         }
     }
@@ -145,7 +147,76 @@ class Home extends BaseController {
         return redirect()->to(base_url('/daftarPaket'));
     }
 
-    public function about(){
-        echo view('about');
+    //Pemesanan
+    public function daftarPesanan() {
+        $pesan = $this->pesanModel->getAllPesanans();
+
+        if ($pesan) {
+            return view('daftarPesanan', ['pesan' => $pesan]);
+        } else {
+            return redirect()->to(base_url('/daftarPesanan'));
+        }
+    }
+
+    public function updatePesanan($id = null){
+        helper(['form', 'url']);
+        $validation = \Config\Services::validation();
+
+        $validation->setRules([
+            'nama_customer' => 'required',
+            'email_customer' => 'required|max_length[30]',
+            'alamat_customer' => 'required',
+            'notelp_customer' => 'required',
+            'jenis_paket' => 'required',
+            'tanggal_pemesanan' => 'required',
+        ]);
+
+        $data['pesan'] = $this->pesanModel->getPesanan($id);
+        //$pesan = $this->pesananModel->getPesanan($id);
+
+         // Check if data was retrieved successfully
+        //if (empty($pesan)) {
+        // Handle the case where no data was found (e.g., redirect to an error page or show a message)
+            //return redirect()->to(base_url('/errorPage'))->with('message', 'Pesanan not found.');
+        //}
+
+        // Set the 'status_pesan' if it is not set
+        //if (!isset($pesan['status_pesan'])) {
+            //$pesan['status_pesan'] = 'Requested'; // or any default value you prefer
+        //}
+
+        //$data['pesan'] = $pesan;
+
+        if (!$validation->withRequest($this->request)->run()) {
+            return view('updatePesanan', ['data' => $data['pesan']], ['validation' => $validation]);
+        } else {
+                // Update db pake nama baru
+                //$email = $this->request->getVar('email_customer');
+                //$encodedEmail = urlencode($email);
+            $statusPemesanan = $this->request->getVar('status_pemesanan_radio');
+
+            $data = [
+                'nama_cust' => $this->request->getVar('nama_customer'),
+                //'email_cust' => $encodedEmail,
+                'email_cust' => $this->request->getVar('email_customer'),
+                'alamat_cust' => $this->request->getVar('alamat_customer'),
+                'notelp_cust' => $this->request->getVar('notelp_customer'),
+                'jenis' => $this->request->getVar('jenis_paket'),
+                'tanggal' => $this->request->getVar('tanggal_pemesanan'),
+                'status_pesan' => $statusPemesanan //default value
+            ];
+            
+            $this->pesanModel->updatePesanan($id, $data);
+            return redirect()->to(base_url('/daftarPesanan'));
+        }
+    }
+    
+    public function deletePesanan($id = null) {
+        $post = $this->pesanModel->getPesanan($id);
+        
+        if ($post) {
+            $this->pesanModel->deletePesanan($id);
+        }
+        return redirect()->to(base_url('/daftarPesanan'));
     }
 }
