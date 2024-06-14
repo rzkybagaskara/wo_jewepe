@@ -13,7 +13,13 @@ class Home extends BaseController {
     }
 
     public function index() {
-        return view('main') . view('footer');
+        $paket = $this->paketModel->getAllPakets();
+        
+        if ($paket) {
+            return view('main', ['paket' => $paket]);
+        } else {
+            return redirect()->to(base_url('/'));
+        }
     }
 
     public function loginAdmin() {
