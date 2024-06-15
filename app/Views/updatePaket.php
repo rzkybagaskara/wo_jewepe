@@ -37,9 +37,9 @@
                 <!-- Fasilitas -->
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Fasilitas</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="fasilitas"
-                        value="<?= isset($data['fasilitas']) ? $data['fasilitas'] : '' ?>" required>
-                        </textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="fasilitas" required>
+                        <?= isset($data['fasilitas']) ? htmlspecialchars($data['fasilitas'], ENT_QUOTES, 'UTF-8') : '' ?>
+                    </textarea>
                 </div>
 
                 <!-- Upload Gambar -->
