@@ -9,7 +9,7 @@ class M_pesanan extends Model {
     //Tabel Paket Wedding
     protected $table = 'pemesanan';
     protected $primaryKey = 'email_cust';
-    protected $allowedFields = ['email_cust', 'nama_cust', 'alamat_cust', 'notelp_cust', 'jenis', 'tanggal'];
+    protected $allowedFields = ['email_cust', 'nama_cust', 'alamat_cust', 'notelp_cust', 'jenis', 'tanggal', 'status_pesan'];
 
     //Models Paket Wedding
     public function getAllPesanans() {

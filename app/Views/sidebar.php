@@ -47,7 +47,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="tambah_artikel.php" class="nav-link">
+                            <a href="<?= base_url('detailWebInfo') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-solid fa-desktop"></i>
                                 <p>Website Info</p>
                             </a>
@@ -61,7 +61,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="../../e-mading/logout.php" class="nav-link">
+                            <a href="<?= base_url('logout') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>Logout</p>
                             </a>

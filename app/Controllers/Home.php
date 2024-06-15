@@ -36,6 +36,8 @@ class Home extends BaseController {
         if ($paket) {
             return view('daftarPaket', ['paket' => $paket]);
         } else {
+            //kalau make filters make admin depannya
+            //return redirect()->to(base_url('/admin/daftarPaket'));
             return redirect()->to(base_url('/daftarPaket'));
         }
     }
@@ -75,6 +77,8 @@ class Home extends BaseController {
             ];
 
             $this->paketModel->addPaket($data);
+            //kalau make filters depannya kasih admin
+            //return redirect()->to(base_url('/admin/daftarPaket'));
             return redirect()->to(base_url('/daftarPaket'));
         }
     }
@@ -106,7 +110,7 @@ class Home extends BaseController {
             if ($gambar_paket->isValid() && !$gambar_paket->hasMoved()) {
 
                 // Hapus gambar seblumyna kalo ada
-                $prev_image = $data['paket']['gambar_paket'];
+                $prev_image = $data['paket']['gambar'];
                 $newName = $gambar_paket->getRandomName();
 
                 if ($prev_image && file_exists(ROOTPATH . 'upload/post/' . $prev_image)) {
@@ -133,6 +137,8 @@ class Home extends BaseController {
             }
 
             $this->paketModel->updatePaket($id, $data);
+            //kalau make filters depannya harus kasih admin
+            //return redirect()->to(base_url('/admin/daftarPaket'));
             return redirect()->to(base_url('/daftarPaket'));
         }
     }
@@ -144,6 +150,8 @@ class Home extends BaseController {
             $this->paketModel->deletePaket($id);
             unlink(ROOTPATH . 'upload/post/' . $post['gambar']);
         }
+        //kalau make filters depannya harus kasih admin
+        //return redirect()->to(base_url('/admin/daftarPaket'));
         return redirect()->to(base_url('/daftarPaket'));
     }
 
@@ -154,6 +162,8 @@ class Home extends BaseController {
         if ($pesan) {
             return view('daftarPesanan', ['pesan' => $pesan]);
         } else {
+            //kalau make filters depannya harus kasih admin
+            //return redirect()->to(base_url('/admin/daftarPesanan'));
             return redirect()->to(base_url('/daftarPesanan'));
         }
     }
@@ -186,7 +196,7 @@ class Home extends BaseController {
         //}
 
         //$data['pesan'] = $pesan;
-
+        //TODO Status Pemesanannya masih stuck di Requested
         if (!$validation->withRequest($this->request)->run()) {
             return view('updatePesanan', ['data' => $data['pesan']], ['validation' => $validation]);
         } else {
@@ -207,6 +217,8 @@ class Home extends BaseController {
             ];
             
             $this->pesanModel->updatePesanan($id, $data);
+            //kalau make filters depannya harus kasih admin
+            //return redirect()->to(base_url('/admin/daftarPesanan'));
             return redirect()->to(base_url('/daftarPesanan'));
         }
     }
@@ -217,6 +229,8 @@ class Home extends BaseController {
         if ($post) {
             $this->pesanModel->deletePesanan($id);
         }
+        //kalau make filters harus kasih admin
+        //return redirect()->to(base_url('/admin/daftarPesanan'));
         return redirect()->to(base_url('/daftarPesanan'));
     }
 }

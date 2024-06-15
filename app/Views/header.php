@@ -22,8 +22,11 @@ body {
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-warning" style="background-color: #929fba">
-        <a class="navbar-brand" href="#">Sigma WO</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #929fba">
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <img src="https://cdn-icons-png.freepik.com/512/2472/2472383.png" height="43" alt="Sigma WO Logo"
+                loading="lazy" />
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,9 +35,8 @@ body {
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active" href="<?= base_url('')?>">Home <span
                         class="sr-only">(current)</span></a>
-                <!-- <a class="nav-item nav-link active" href="<?= base_url('about')?>">About</a> -->
                 <a class="nav-item nav-link active" href="<?= base_url('rsvp')?>">RSVP</a>
-                <a class="btn btn-info" href="<?= base_url('loginAdmin')?>">Login Admin</a>
+                <a class="btn btn-info" href="<?= base_url('loginPage')?>">Login Admin</a>
             </div>
         </div>
     </nav>

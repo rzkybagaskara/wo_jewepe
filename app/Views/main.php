@@ -13,7 +13,8 @@
                     style="height: 290px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title"><?= $paket['jenis'] ?></h5>
-                    <a href="#" class="btn btn-primary mt-auto">Detail Paket</a>
+                    <p><?= $paket['harga'] ?></p>
+                    <p><?= $paket['fasilitas'] ?></p>
                 </div>
             </div>
         </div>

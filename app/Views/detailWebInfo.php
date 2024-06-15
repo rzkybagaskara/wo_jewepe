@@ -13,17 +13,15 @@
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
-            <h3>Daftar Paket Wedding</h3>
-            <a href="<?= base_url('tambahPaket') ?>" class="btn btn-success mb-2">Tambah Paket</a>
+            <h3>Website Info</h3>
             <table class="table table-bordered text-center">
                 <thead>
                     <tr class="bg-dark text-white">
                         <th scope="col">Nomor</th>
-                        <th scope="col">Jenis</th>
-                        <th scope="col">Fasilitas</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">Gambar</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Hero Image</th>
+                        <th scope="col">Logo Website</th>
+                        <th scope="col">No Telp</th>
+                        <th scope="col">Alamat Bisnis</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,7 +31,6 @@
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $paket['jenis'] ?></td>
                     <td><?= $paket['fasilitas'] ?></td>
-                    <td><?= $paket['harga'] ?></td>
                     <td><img src="<?= $image_url . $paket['gambar'] ?>" alt="Gambar Paket"
                             style="width:150px; height:150px;">
                     </td>
@@ -56,30 +53,3 @@
         </div>
     </section>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const deleteData = document.querySelectorAll('form[data-delete-form]');
-
-    deleteData.forEach(form => {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-            Swal.fire({
-                title: "Apakah anda ingin menghapus data tersebut?",
-                text: "Sekali dihapus maka data akan hilang selamanya!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Ya, hapus!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    form.submit();
-                }
-            });
-
-        })
-    })
-})
-</script>
