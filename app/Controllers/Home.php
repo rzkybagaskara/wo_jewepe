@@ -196,7 +196,6 @@ class Home extends BaseController {
         //}
 
         //$data['pesan'] = $pesan;
-        //TODO Status Pemesanannya masih stuck di Requested
         if (!$validation->withRequest($this->request)->run()) {
             return view('updatePesanan', ['data' => $data['pesan']], ['validation' => $validation]);
         } else {
