@@ -8,13 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap4.css">
 </head>
 
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
             <h3>Daftar Pesanan Paket Wedding</h3>
-            <table class="table table-bordered text-center">
+            <table class="table table-bordered text-center" id="myTable">
                 <thead>
                     <tr class="bg-dark text-white">
                         <th scope="col">Nomor</th>
@@ -65,8 +68,22 @@
     </section>
 </div>
 
+<!-- DataTable JavaScript -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"></script>
+
+<!-- SWAL2 Notification -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+//Initialize DataTable
+$(document).ready(function() {
+    $('#myTable').DataTable();
+});
+
+//SWAL2 Modifier
 document.addEventListener("DOMContentLoaded", function() {
     const deleteData = document.querySelectorAll('form[data-delete-form]');
 
