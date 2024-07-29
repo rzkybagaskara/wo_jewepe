@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Ensures the content area is flexed to take remaining space */
+.content-wrapper {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Ensures the sidebar stretches to the full height */
+.main-sidebar {
+    min-height: 100vh;
+}
+
+/* Optional: Adjusts the height of the table container */
+.container-fluid {
+    min-height: calc(100vh - 60px); /* Adjust based on your header height */
+    padding-top: 20px; /* Adjust padding as needed */
+}

@@ -6,6 +6,9 @@
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" />
 
+    <!-- Sidebar CSS -->
+    <link rel="stylesheet" href="<?php echo base_url('/css/sidebar.css'); ?>">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
@@ -46,12 +49,14 @@
                             </a>
                         </li>
 
+                        <!--
                         <li class="nav-item">
                             <a href="<?= base_url('detailWebInfo') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-solid fa-desktop"></i>
                                 <p>Website Info</p>
                             </a>
                         </li>
+-->
 
                         <li class="nav-item">
                             <a href="<?= base_url('/') ?>" class="nav-link">
