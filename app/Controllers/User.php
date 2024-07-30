@@ -51,5 +51,27 @@ class User extends BaseController {
             return redirect()->to(base_url('/'));
         }
     }
+
+    public function cekStatusPesanan() {
+        $statusPesan = $this->pesananModel->getAllPesanans();
+        
+        foreach ($statusPesan as &$pesanan) {
+            $pesanan['color'] = $this->getProperColor($pesanan['status_pesan']);
+        }
+    
+        return view('statusPesanan', ['statusPesan' => $statusPesan]);
+    }
+    
+    private function getProperColor($status) {
+        switch ($status) {
+            case 'Requested':
+                return '#FF8000';
+            case 'Accepted':
+                return '#00FF00';
+            default:
+                return '#FF0000';
+        }
+    }
+    
 }
 ?>

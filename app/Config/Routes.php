@@ -22,6 +22,10 @@ $routes->get('/daftarPesanan', 'Home::daftarPesanan');
 $routes->post('/updatePesanan/(:any)', 'Home::updatePesanan/$1');
 $routes->post('/deletePesanan/(:any)', 'Home::deletePesanan/$1');
 
+//Status Pesan
+#$routes->get('/statusPesanan', 'User::statusPesanan');
+$routes->get('/statusPesanan', 'User::cekStatusPesanan');
+
 //Website Info Page
 $routes->get('/detailWebInfo', 'WebsiteInfo::detailWebInfo');
 

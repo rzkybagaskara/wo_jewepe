@@ -4,14 +4,14 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-//Model untuk Paket
+//Model untuk Pemesanan
 class M_pesanan extends Model {
-    //Tabel Paket Wedding
+    //Tabel Pemesanan Wedding
     protected $table = 'pemesanan';
     protected $primaryKey = 'email_cust';
     protected $allowedFields = ['email_cust', 'nama_cust', 'alamat_cust', 'notelp_cust', 'jenis', 'tanggal', 'status_pesan'];
 
-    //Models Paket Wedding
+    //Models Pemesanan
     public function getAllPesanans() {
         return $this->findAll();
     }

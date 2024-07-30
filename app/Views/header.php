@@ -36,6 +36,7 @@ body {
                 <a class="nav-item nav-link active" href="<?= base_url('')?>">Home <span
                         class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link active" href="<?= base_url('rsvp')?>">RSVP</a>
+                <a class="nav-item nav-link active" href="<?= base_url('statusPesanan')?>">Status Pesan</a>
                 <a class="btn btn-info" href="<?= base_url('loginPage')?>">Login Admin</a>
             </div>
         </div>
