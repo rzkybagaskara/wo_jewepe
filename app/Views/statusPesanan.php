@@ -1,6 +1,6 @@
 <?php include('header.php') ?>
 
-<h2 class="text-center mt-5">Cek Status Pesanan</h2>
+<h2 class="text-center mt-4">Cek Status Pesanan</h2>
 
 <head>
     <!-- Required meta tags -->
@@ -13,6 +13,9 @@
 
     <!-- DataTable CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.2/css/dataTables.bootstrap4.css">
+
+    <!-- DataTable CSS (Search Box) -->
+    <link rel="stylesheet" href="<?php echo base_url('/css/datatable.css'); ?>">
 </head>
 
 <div class="content-wrapper">

@@ -1,0 +1,10 @@
+.dataTables_filter{
+    float:right;
+    text-align: left;
+}
+
+.dataTables_paginate, .paging_simple_numbers {
+    margin-top: 10px;
+    float:right;
+    text-align: left;
+}
