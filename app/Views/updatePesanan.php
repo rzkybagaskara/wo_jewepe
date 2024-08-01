@@ -86,6 +86,15 @@
                             Accepted
                         </label>
                     </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="status_pemesanan_radio"
+                            id="radioButtonPublish"
+                            <?php echo (isset($data['status_pesan']) && $data['status_pesan'] == 'Rejected') ? 'checked' : ''; ?>
+                            value="Rejected">
+                        <label class="form-check-label" for="radioButtonRejected">
+                            Rejected
+                        </label>
+                    </div>
                 </div>
 
 

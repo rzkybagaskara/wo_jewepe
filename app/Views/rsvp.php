@@ -60,12 +60,39 @@
                                 <label class="order-form-label">Jenis Paket</label>
                             </div>
                             <!-- nanti tambahin select form di sini -->
-                            <div class="col-12">
+                            <!-- <div class="col-12">
                                 <div data-mdb-input-init class="form-outline">
-                                    <input type="text" id="form5" class="form-control order-form-input"
+                                    <input type="button" id="form5" class="form-control order-form-input"
                                         name="jenis_paket" />
                                 </div>
+                            </div> -->
+
+                            <div class="col-12">
+                                <div data-mdb-input-init class="form-outline">
+                                    <div class="form-check">
+                                        <input type="radio" id="form5_regular" class="form-check-input"
+                                            name="jenis_paket" value="Regular" />
+                                        <label class="form-check-label" for="form5_regular">
+                                            Regular
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" id="form5_super" class="form-check-input" name="jenis_paket"
+                                            value="Super" />
+                                        <label class="form-check-label" for="form5_super">
+                                            Super
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="radio" id="form5_premium" class="form-check-input"
+                                            name="jenis_paket" value="Premium" />
+                                        <label class="form-check-label" for="form5_premium">
+                                            Premium
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                         <div class="row mt-3 mx-4">
                             <div class="col-12">
@@ -118,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
             event.preventDefault();
             Swal.fire({
                 title: "Pemesanan paket berhasil",
-                text: "Silakan tunggu konfirmasi email oleh admin",
+                text: "Silakan cek status pemesanan pada Status Pesan",
                 icon: "success",
                 confirmButtonText: "OK"
             }).then((result) => {
