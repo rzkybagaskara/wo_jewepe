@@ -52,33 +52,5 @@ class WebsiteInfo extends BaseController {
             return redirect()->to(base_url('/detailWebInfo'));
         }
     }
-
-    public function footerWebInfo() {
-        $id = 1;
-    
-        $webInfo = $this->webInfoModel->first();
-    
-        if ($webInfo) {
-            $data = [
-                'notelp' => $webInfo['notelp_website'],
-                'alamat' => $webInfo['alamat_website'],
-                'email' => $webInfo['email_website']
-            ];
-            
-            // Load the views with data
-            $header = view('header');
-            $main = view('main', $data);
-            $footer = view('footer', $data);
-    
-            // Concatenate the views
-            $output = $header . $main . $footer;
-    
-            return $output;
-        } else {
-            // Handle case where no web info is found
-            throw new \CodeIgniter\Exceptions\PageNotFoundException('Web info not found');
-        }
-    }
-    
 }
 ?>

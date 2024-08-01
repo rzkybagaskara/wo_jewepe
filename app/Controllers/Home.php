@@ -4,27 +4,43 @@ namespace App\Controllers;
 
 use App\Models\M_paket;
 use App\Models\M_pesanan;
+use App\Models\M_websiteinfo;
 
 //Main Controller untuk Admin melakukan manajemen website
 class Home extends BaseController {
     protected $paketModel;
     protected $pesananModel;
+    protected $webInfoModel;
 
     public function __construct() {
         $this->paketModel = new M_paket();
         $this->pesanModel= new M_pesanan();
+        $this->webInfoModel= new M_websiteinfo();
     }
 
     public function index() {
         $paket = $this->paketModel->getAllPakets();
-        
-        if ($paket) {
-            return view('main', ['paket' => $paket]);
+        $webInfo = $this->webInfoModel->first();
+    
+        if ($paket && $webInfo) {
+            $data = [
+                'notelp' => $webInfo['notelp_website'],
+                'alamat' => $webInfo['alamat_website'],
+                'email' => $webInfo['email_website']
+            ];
+    
+            // Load the views with data
+            $data['paket'] = $paket;
+            $data['header'] = view('header', [], ['saveData' => true]);
+            $data['main'] = view('main', $data, ['saveData' => true]);
+            $data['footer'] = view('footer', $data, ['saveData' => true]);
+    
+            return view('main', $data);
         } else {
             return redirect()->to(base_url('/'));
         }
     }
-
+    
     public function loginAdmin() {
         echo view('loginAdmin');
     }

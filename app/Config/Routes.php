@@ -29,8 +29,7 @@ $routes->get('/statusPesanan', 'User::cekStatusPesanan');
 
 //Website Info Page
 $routes->get('/detailWebInfo', 'WebsiteInfo::daftarWebInfo');
-$routes->get('/', 'WebsiteInfo::footerWebInfo'); 
-$routes->post('/updateWebInfo/(:any)', 'WebsiteInfo::updateWebInfo/$1'); 
+$routes->post('/updateWebInfo/(:any)', 'WebsiteInfo::updateWebInfo/$1');
 
 //Login Admin Page
 $routes->get('/loginPage', 'Login::loginPage');

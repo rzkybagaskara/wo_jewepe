@@ -24,9 +24,9 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                    <p><i class="fas fa-home mr-3"></i> Jalan Cibubur 1 No 10</p>
-                    <p><i class="fas fa-envelope mr-3"></i> sigmawo@gmail.com</p>
-                    <p><i class="fas fa-phone mr-3"></i>083872111034</p>
+                    <p><i class="fas fa-home mr-3"></i> <?= $alamat ?></p>
+                    <p><i class="fas fa-envelope mr-3"></i> <?= $email ?></p>
+                    <p><i class="fas fa-phone mr-3"></i> <?= $notelp ?></p>
                 </div>
                 <!-- Grid column -->
         </section>
