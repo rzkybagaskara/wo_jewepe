@@ -17,37 +17,31 @@
             <table class="table table-bordered text-center">
                 <thead>
                     <tr class="bg-dark text-white">
-                        <th scope="col">Nomor</th>
-                        <th scope="col">Hero Image</th>
-                        <th scope="col">Logo Website</th>
                         <th scope="col">No Telp</th>
                         <th scope="col">Alamat Bisnis</th>
+                        <th scope="col">Email Bisnis</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Loop untuk tampil daftar paket -->
-                    <?php foreach ($paket as $index => $paket) : ?>
-                    <?php $image_url = '../upload/post/' ?>
-                    <th scope="row"><?= $index + 1 ?></th>
-                    <td><?= $paket['jenis'] ?></td>
-                    <td><?= $paket['fasilitas'] ?></td>
-                    <td><img src="<?= $image_url . $paket['gambar'] ?>" alt="Gambar Paket"
-                            style="width:150px; height:150px;">
-                    </td>
-                    <td>
-                        <form action="<?= base_url('updatePaket/' . $paket['id_paket']) ?>" method="POST"
-                            style="display: inline;">
-                            <input type="hidden" name="_update" value="POST">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </form>
-                        <form action="<?= base_url('deletePaket/' . $paket['id_paket']) ?>" method="POST"
-                            data-delete-form style="display: inline;">
-                            <input type="hidden" name="_method" value="POST">
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form>
-                    </td>
+                    <!-- Loop untuk tampil halaman -->
+                    <?php if (!empty($error)): ?>
+                    <p><?php echo $error; ?></p>
+                    <?php else: ?>
+                    <tr>
+                        <?php foreach ($info as $item): ?>
+                        <td><?= $item['notelp_website']; ?></td>
+                        <td><?= $item['alamat_website']; ?></td>
+                        <td><?= $item['email_website']; ?></td>
+                        <td>
+                            <form action="<?= base_url('updateWebInfo/' . $item['id_webinfo']) ?>" method="POST"
+                                style="display: inline;">
+                                <input type="hidden" name="_update" value="POST">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                            <?php endforeach; ?>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
