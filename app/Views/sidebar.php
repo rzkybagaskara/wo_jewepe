@@ -49,14 +49,19 @@
                             </a>
                         </li>
 
-                        <!--
+                        <li class="nav-item">
+                            <a href="<?= base_url('laporanPesanan') ?>" class="nav-link">
+                                <i class="nav-icon fas fa-regular fa-clipboard"></i>
+                                <p>Laporan Pesanan</p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="<?= base_url('detailWebInfo') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-solid fa-desktop"></i>
                                 <p>Website Info</p>
                             </a>
                         </li>
--->
 
                         <li class="nav-item">
                             <a href="<?= base_url('/') ?>" class="nav-link">

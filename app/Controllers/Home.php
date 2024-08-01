@@ -168,6 +168,22 @@ class Home extends BaseController {
         }
     }
 
+    public function laporanPesanan() {
+        $pesan = $this->pesanModel->getAllPesanans();
+        $jenisCounts = $this->pesanModel->getJenisCounts();
+
+        if ($pesan) {
+            return view('laporanPesanan', [
+                'pesan' => $pesan,
+                'jenisCounts' => $jenisCounts
+        ]);
+        } else {
+            //kalau make filters depannya harus kasih admin
+            //return redirect()->to(base_url('/admin/daftarPesanan'));
+            return redirect()->to(base_url('/laporanPesanan'));
+        }
+    }
+
     public function updatePesanan($id = null){
         helper(['form', 'url']);
         $validation = \Config\Services::validation();

@@ -19,6 +19,7 @@ $routes->post('/tambahPaket', 'Home::tambahPaket');
 $routes->get('/rsvp', 'User::rsvp');
 $routes->post('/user/tambahPesanan', 'User::tambahPesanan');
 $routes->get('/daftarPesanan', 'Home::daftarPesanan');
+$routes->get('/laporanPesanan', 'Home::laporanPesanan');
 $routes->post('/updatePesanan/(:any)', 'Home::updatePesanan/$1');
 $routes->post('/deletePesanan/(:any)', 'Home::deletePesanan/$1');
 
