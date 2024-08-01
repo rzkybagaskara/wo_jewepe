@@ -13,7 +13,7 @@
                     style="height: 290px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title"><?= $paket['jenis'] ?></h5>
-                    <p><?= $paket['harga'] ?></p>
+                    <p><?= 'Rp' . number_format($paket['harga'], 2, ",",".") ?></p>
                     <p><?= $paket['fasilitas'] ?></p>
                 </div>
             </div>

@@ -39,7 +39,7 @@
                     <th scope="row"><?= $index + 1 ?></th>
                     <td><?= $paket['jenis'] ?></td>
                     <td><?= $paket['fasilitas'] ?></td>
-                    <td><?= $paket['harga'] ?></td>
+                    <td><?= 'Rp' . number_format($paket['harga'], 2, ",",".") ?></td>
                     <td><img src="<?= $image_url . $paket['gambar'] ?>" alt="Gambar Paket"
                             style="width:150px; height:150px;">
                     </td>
