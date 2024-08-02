@@ -15,7 +15,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid box">
-            <h1>Update Paket Wedding</h1>
+            <h1>Update Website Info</h1>
             <form action="<?= base_url('admin/updateWebInfo/' . $data['id_webinfo'])?>" method="POST"
                 enctype="multipart/form-data" data-update-form>
                 <input type="hidden" name="_method" value="POST">
