@@ -25,6 +25,7 @@
                 <thead>
                     <tr class="bg-dark text-white">
                         <th scope="col">Nomor</th>
+                        <th scope="col">ID Paket</th>
                         <th scope="col">Jenis</th>
                         <th scope="col">Fasilitas</th>
                         <th scope="col">Harga</th>
@@ -38,6 +39,7 @@
                     <?php $image_url = base_url('upload/post/') . $paket['gambar'] ?>
                     <tr>
                         <th scope="row"><?= $index + 1 ?></th>
+                        <td><?= $paket['id_paket'] ?></td>
                         <td><?= $paket['jenis'] ?></td>
                         <td><?= $paket['fasilitas'] ?></td>
                         <td><?= 'Rp' . number_format($paket['harga'], 2, ",",".") ?></td>

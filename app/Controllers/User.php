@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\M_pesanan;
+use App\Models\M_paket;
 
 //Controller User untuk melakukan pemesanan paket wedding
 class User extends BaseController {
     protected $pesananModel;
+    protected $paketModel;
 
     public function __construct() {
         $this->pesananModel= new M_pesanan();
+        $this->paketModel= new M_paket();
     }
 
     public function rsvp() {
@@ -27,6 +30,7 @@ class User extends BaseController {
             'notelp_customer' => 'required',
             'jenis_paket' => 'required',
             'tanggal_pemesanan' => 'required',
+            // 'id_paket' => 'required|numeric'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -44,7 +48,8 @@ class User extends BaseController {
                 'notelp_cust' => $this->request->getVar('notelp_customer'),
                 'jenis' => $this->request->getVar('jenis_paket'),
                 'tanggal' => $this->request->getVar('tanggal_pemesanan'),
-                'status_pesan' => 'Requested' //default value
+                'status_pesan' => 'Requested', //default value,
+                // 'id_paket' => $this->request->getVar('id_paket'),
             ];
 
             $this->pesananModel->addPesanan($data);
