@@ -53,8 +53,8 @@ class Home extends BaseController {
             return view('daftarPaket', ['paket' => $paket]);
         } else {
             //kalau make filters make admin depannya
-            //return redirect()->to(base_url('/admin/daftarPaket'));
-            return redirect()->to(base_url('/daftarPaket'));
+            return redirect()->to(base_url('admin/daftarPaket'));
+            // return redirect()->to(base_url('/daftarPaket'));
         }
     }
 
@@ -94,8 +94,8 @@ class Home extends BaseController {
 
             $this->paketModel->addPaket($data);
             //kalau make filters depannya kasih admin
-            //return redirect()->to(base_url('/admin/daftarPaket'));
-            return redirect()->to(base_url('/daftarPaket'));
+            return redirect()->to(base_url('admin/daftarPaket'));
+            // return redirect()->to(base_url('/daftarPaket'));
         }
     }
 
@@ -154,8 +154,8 @@ class Home extends BaseController {
 
             $this->paketModel->updatePaket($id, $data);
             //kalau make filters depannya harus kasih admin
-            //return redirect()->to(base_url('/admin/daftarPaket'));
-            return redirect()->to(base_url('/daftarPaket'));
+            return redirect()->to(base_url('admin/daftarPaket'));
+            // return redirect()->to(base_url('/daftarPaket'));
         }
     }
 
@@ -167,8 +167,8 @@ class Home extends BaseController {
             unlink(ROOTPATH . 'upload/post/' . $post['gambar']);
         }
         //kalau make filters depannya harus kasih admin
-        //return redirect()->to(base_url('/admin/daftarPaket'));
-        return redirect()->to(base_url('/daftarPaket'));
+        return redirect()->to(base_url('admin/daftarPaket'));
+        // return redirect()->to(base_url('/daftarPaket'));
     }
 
     //Pemesanan
@@ -179,8 +179,8 @@ class Home extends BaseController {
             return view('daftarPesanan', ['pesan' => $pesan]);
         } else {
             //kalau make filters depannya harus kasih admin
-            //return redirect()->to(base_url('/admin/daftarPesanan'));
-            return redirect()->to(base_url('/daftarPesanan'));
+            return redirect()->to(base_url('admin/daftarPesanan'));
+            // return redirect()->to(base_url('/daftarPesanan'));
         }
     }
 
@@ -195,8 +195,8 @@ class Home extends BaseController {
         ]);
         } else {
             //kalau make filters depannya harus kasih admin
-            //return redirect()->to(base_url('/admin/daftarPesanan'));
-            return redirect()->to(base_url('/laporanPesanan'));
+            return redirect()->to(base_url('/admin/laporanPesanan'));
+            // return redirect()->to(base_url('/laporanPesanan'));
         }
     }
 
@@ -249,8 +249,8 @@ class Home extends BaseController {
             
             $this->pesanModel->updatePesanan($id, $data);
             //kalau make filters depannya harus kasih admin
-            //return redirect()->to(base_url('/admin/daftarPesanan'));
-            return redirect()->to(base_url('/daftarPesanan'));
+            return redirect()->to(base_url('admin/daftarPesanan'));
+            // return redirect()->to(base_url('/daftarPesanan'));
         }
     }
     
@@ -261,7 +261,7 @@ class Home extends BaseController {
             $this->pesanModel->deletePesanan($id);
         }
         //kalau make filters harus kasih admin
-        //return redirect()->to(base_url('/admin/daftarPesanan'));
-        return redirect()->to(base_url('/daftarPesanan'));
+        return redirect()->to(base_url('admin/daftarPesanan'));
+        // return redirect()->to(base_url('/daftarPesanan'));
     }
 }

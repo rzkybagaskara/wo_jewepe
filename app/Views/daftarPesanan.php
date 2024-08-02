@@ -53,13 +53,13 @@
                         <!-- set default status pesanan yakni Requested dan di sort berdasarkan status -->
                         <td><?= $pesanan['status_pesan'] ?></td>
                         <td>
-                            <form action="<?= base_url('updatePesanan/' . $pesanan['email_cust']) ?>" method="POST"
-                                style="display: inline;">
+                            <form action="<?= base_url('admin/updatePesanan/' . $pesanan['email_cust']) ?>"
+                                method="POST" style="display: inline;">
                                 <input type="hidden" name="_update" value="POST">
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
-                            <form action="<?= base_url('deletePesanan/' . $pesanan['email_cust']) ?>" method="POST"
-                                data-delete-form style="display: inline;">
+                            <form action="<?= base_url('admin/deletePesanan/' . $pesanan['email_cust']) ?>"
+                                method="POST" data-delete-form style="display: inline;">
                                 <input type="hidden" name="_method" value="POST">
                                 <button type="submit" class="btn btn-danger">Hapus</button>
                             </form>

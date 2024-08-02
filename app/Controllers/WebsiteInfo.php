@@ -16,12 +16,12 @@ class WebsiteInfo extends BaseController {
         $info = $this->webInfoModel->getAllWebInfos();
 
         if ($info) {
-            return view('detailWebInfo', ['info' => $info]);
+            return view('/detailWebInfo', ['info' => $info]);
         } else {
             //kalau make filters make admin depannya
             //return redirect()->to(base_url('/admin/daftarPaket'));
                 // Instead of redirecting, you can show an error message
-            return view('detailWebInfo', ['info' => [], 'error' => 'No information available.']);
+            return view('/detailWebInfo', ['info' => [], 'error' => 'No information available.']);
         }
     }
 
@@ -38,7 +38,7 @@ class WebsiteInfo extends BaseController {
         $data['info'] = $this->webInfoModel->getWebInfo($id);
 
         if (!$validation->withRequest($this->request)->run()) {
-            return view('updateWebInfo', ['data' => $data['info']], ['validation' => $validation]);
+            return view('/updateWebInfo', ['data' => $data['info']], ['validation' => $validation]);
         } else {
             $data = [
                 'notelp_website' => $this->request->getVar('notelp_bisnis'),
@@ -49,7 +49,7 @@ class WebsiteInfo extends BaseController {
             $this->webInfoModel->updateWebInfo($id, $data);
             //kalau make filters depannya harus kasih admin
             //return redirect()->to(base_url('/admin/daftarPesanan'));
-            return redirect()->to(base_url('/detailWebInfo'));
+            return redirect()->to(base_url('admin/detailWebInfo'));
         }
     }
 }

@@ -16,10 +16,65 @@ class Login extends BaseController {
         return view('/loginAdmin');
     }
 
+    // public function checkLogin() {
+    //     helper(['url', 'form']);
+    //     $validation = \Config\Services::validation();
+        
+    //     $validation->setRules([
+    //         'username_admin' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => "Username harus diisi",
+    //             ]
+    //         ],
+    //         'pw_admin' => [
+    //             'rules' => 'required',
+    //             'errors' => [
+    //                 'required' => "Password harus diisi"
+    //             ]
+    //         ],
+    //     ]);
+        
+    //     if (!$validation->withRequest($this->request)->run()) {
+    //         return view('loginAdmin', ['validation' => $validation]);
+    //     } else {
+    //         $username = $this->request->getVar('username_admin');
+    //         $password = $this->request->getVar('pw_admin');
+            
+    //         $userInfo = $this->loginModel->where('username', $username)->first();
+            
+    //         if (!$userInfo) {
+    //             session()->setFlashdata('fail', 'Username not found');
+    //             return redirect()->to(base_url('/loginPage'))->withInput();
+    //         }
+            
+    //         //$checkPassword = password_verify($password, $userInfo['password']); // Ensure password hashing method matches
+
+    //         if ($password !== $userInfo['password']) {
+    //             session()->setFlashdata('fail', 'Incorrect password');
+    //             return redirect()->to(base_url('/loginPage'))->withInput();
+    //         } else {
+    //             $loggedUserId = $userInfo['id_admin'];
+    //             $loggedUserFullName = $userInfo['admin_name'];
+    //             //$loggedUserId = 01;
+    //             //$loggedUserFullName = 'John Doe';
+
+    //             session()->set('loggedUserId', $loggedUserId);
+    //             session()->set('loggedUserFullName', $loggedUserFullName);
+    //             session()->set('IsLoggedIn', true);
+
+    //             session()->setFlashdata('success', 'Login successful');
+    //             //kalau make filters
+    //             return redirect()->to(base_url('/admin/daftarPaket'));
+    //             // return redirect()->to(base_url('/daftarPaket'));
+    //         }
+    //     }
+    // }
+
     public function checkLogin() {
         helper(['url', 'form']);
         $validation = \Config\Services::validation();
-        
+    
         $validation->setRules([
             'username_admin' => [
                 'rules' => 'required',
@@ -34,39 +89,33 @@ class Login extends BaseController {
                 ]
             ],
         ]);
-        
+    
         if (!$validation->withRequest($this->request)->run()) {
             return view('loginAdmin', ['validation' => $validation]);
         } else {
             $username = $this->request->getVar('username_admin');
             $password = $this->request->getVar('pw_admin');
-            
+    
             $userInfo = $this->loginModel->where('username', $username)->first();
-            
+    
             if (!$userInfo) {
                 session()->setFlashdata('fail', 'Username not found');
-                return redirect()->to(base_url('/loginPage'))->withInput();
+                return redirect()->to('loginPage')->withInput();
             }
-            
-            //$checkPassword = password_verify($password, $userInfo['password']); // Ensure password hashing method matches
-
+    
             if ($password !== $userInfo['password']) {
                 session()->setFlashdata('fail', 'Incorrect password');
-                return redirect()->to(base_url('/loginPage'))->withInput();
+                return redirect()->to('loginPage')->withInput();
             } else {
                 $loggedUserId = $userInfo['id_admin'];
                 $loggedUserFullName = $userInfo['admin_name'];
-                //$loggedUserId = 01;
-                //$loggedUserFullName = 'John Doe';
-
+    
                 session()->set('loggedUserId', $loggedUserId);
                 session()->set('loggedUserFullName', $loggedUserFullName);
-                //session()->set('IsLoggedIn', true);
-
+                session()->set('IsLoggedIn', true);  // This line sets the IsLoggedIn session variable
+    
                 session()->setFlashdata('success', 'Login successful');
-                //kalau make filters
-                //return redirect()->to(base_url('/admin/daftarPaket'));
-                return redirect()->to(base_url('/daftarPaket'));
+                return redirect()->to('admin/daftarPaket');
             }
         }
     }

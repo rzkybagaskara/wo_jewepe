@@ -20,8 +20,7 @@ class M_pesanan extends Model {
         return $this->find($id);
     }
 
-    public function getJenisCounts()
-    {
+    public function getJenisCounts(){
         return $this->select('jenis, COUNT(*) as count')
                     ->groupBy('jenis')
                     ->findAll();

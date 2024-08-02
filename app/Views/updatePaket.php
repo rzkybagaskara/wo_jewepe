@@ -16,7 +16,7 @@
     <section class="content">
         <div class="container-fluid box">
             <h1>Update Paket Wedding</h1>
-            <form action="<?= base_url('updatePaket/' . $data['id_paket'])?>" method="POST"
+            <form action="<?= base_url('admin/updatePaket/' . $data['id_paket'])?>" method="POST"
                 enctype="multipart/form-data" data-update-form>
                 <input type="hidden" name="_method" value="POST">
 

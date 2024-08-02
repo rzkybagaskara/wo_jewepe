@@ -34,7 +34,7 @@
                         <td><?= $item['alamat_website']; ?></td>
                         <td><?= $item['email_website']; ?></td>
                         <td>
-                            <form action="<?= base_url('updateWebInfo/' . $item['id_webinfo']) ?>" method="POST"
+                            <form action="<?= base_url('admin/updateWebInfo/' . $item['id_webinfo']) ?>" method="POST"
                                 style="display: inline;">
                                 <input type="hidden" name="_update" value="POST">
                                 <button type="submit" class="btn btn-primary">Update</button>

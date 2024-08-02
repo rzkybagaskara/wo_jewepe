@@ -20,7 +20,7 @@
     <section class="content">
         <div class="container-fluid">
             <h3>Daftar Paket Wedding</h3>
-            <a href="<?= base_url('tambahPaket') ?>" class="btn btn-success mb-2">Tambah Paket</a>
+            <a href="<?= base_url('admin/tambahPaket') ?>" class="btn btn-success mb-2">Tambah Paket</a>
             <table class="table table-bordered text-center" id="myTable">
                 <thead>
                     <tr class="bg-dark text-white">
@@ -35,26 +35,26 @@
                 <tbody>
                     <!-- Loop untuk tampil daftar paket -->
                     <?php foreach ($paket as $index => $paket) : ?>
-                    <?php $image_url = '../upload/post/' ?>
-                    <th scope="row"><?= $index + 1 ?></th>
-                    <td><?= $paket['jenis'] ?></td>
-                    <td><?= $paket['fasilitas'] ?></td>
-                    <td><?= 'Rp' . number_format($paket['harga'], 2, ",",".") ?></td>
-                    <td><img src="<?= $image_url . $paket['gambar'] ?>" alt="Gambar Paket"
-                            style="width:150px; height:150px;">
-                    </td>
-                    <td>
-                        <form action="<?= base_url('updatePaket/' . $paket['id_paket']) ?>" method="POST"
-                            style="display: inline;">
-                            <input type="hidden" name="_update" value="POST">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </form>
-                        <form action="<?= base_url('deletePaket/' . $paket['id_paket']) ?>" method="POST"
-                            data-delete-form style="display: inline;">
-                            <input type="hidden" name="_method" value="POST">
-                            <button type="submit" class="btn btn-danger">Hapus</button>
-                        </form>
-                    </td>
+                    <?php $image_url = base_url('upload/post/') . $paket['gambar'] ?>
+                    <tr>
+                        <th scope="row"><?= $index + 1 ?></th>
+                        <td><?= $paket['jenis'] ?></td>
+                        <td><?= $paket['fasilitas'] ?></td>
+                        <td><?= 'Rp' . number_format($paket['harga'], 2, ",",".") ?></td>
+                        <td><img src="<?= $image_url ?>" alt="Gambar Paket" style="width:150px; height:150px;">
+                        </td>
+                        <td>
+                            <form action="<?= base_url('admin/updatePaket/' . $paket['id_paket']) ?>" method="POST"
+                                style="display: inline;">
+                                <input type="hidden" name="_update" value="POST">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                            <form action="<?= base_url('admin/deletePaket/' . $paket['id_paket']) ?>" method="POST"
+                                data-delete-form style="display: inline;">
+                                <input type="hidden" name="_method" value="POST">
+                                <button type="submit" class="btn btn-danger">Hapus</button>
+                            </form>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -73,7 +73,7 @@
 <!-- SWAL2 Notification -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-//Initialize DataTable
+// Initialize DataTable
 $(document).ready(function() {
     $('#myTable').DataTable();
 });

@@ -16,7 +16,8 @@
     <section class="content">
         <div class="container-fluid box">
             <h1>Tambah Paket Wedding</h1>
-            <form action="<?= base_url('tambahPaket') ?>" method="POST" enctype="multipart/form-data" data-insert-form>
+            <form action="<?= base_url('admin/tambahPaket') ?>" method="POST" enctype="multipart/form-data"
+                data-insert-form>
 
                 <!-- Jenis -->
                 <div class="form-group">

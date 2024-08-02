@@ -36,28 +36,28 @@
                         data-accordion="false">
                         <!-- Dashboard -->
                         <li class="nav-item">
-                            <a href="<?= base_url('daftarPaket') ?>" class="nav-link">
+                            <a href="<?= base_url('admin/daftarPaket') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-regular fa-newspaper"></i>
                                 <p>Daftar Paket</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('daftarPesanan') ?>" class="nav-link">
+                            <a href="<?= base_url('admin/daftarPesanan') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-regular fa-cart-plus"></i>
                                 <p>Daftar Pesanan</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('laporanPesanan') ?>" class="nav-link">
+                            <a href="<?= base_url('admin/laporanPesanan') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-regular fa-clipboard"></i>
                                 <p>Laporan Pesanan</p>
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('detailWebInfo') ?>" class="nav-link">
+                            <a href="<?= base_url('admin/detailWebInfo') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-solid fa-desktop"></i>
                                 <p>Website Info</p>
                             </a>
@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="<?= base_url('logout') ?>" class="nav-link">
+                            <a href="<?= base_url('admin/logout') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 <p>Logout</p>
                             </a>
