@@ -1,6 +1,8 @@
 <?php include('header.php') ?>
 <?php include('hero.php') ?>
 
+<title>Sigma WO</title>
+
 <div class="container-card">
     <h3 class="mt-3 ml-1 pb-2 text-center">Paket Wedding</h3>
     <div class="row p-1">

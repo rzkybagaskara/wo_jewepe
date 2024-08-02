@@ -13,7 +13,10 @@ class Login extends BaseController {
     }
 
     public function loginPage() {
-        return view('/loginAdmin');
+        // return view('/loginAdmin');
+        return view('loginAdmin', [
+            'base_url' => base_url('/loginAdmin')
+        ]);
     }
 
     // public function checkLogin() {
@@ -91,7 +94,10 @@ class Login extends BaseController {
         ]);
     
         if (!$validation->withRequest($this->request)->run()) {
-            return view('loginAdmin', ['validation' => $validation]);
+            return view('loginAdmin', [
+                'validation' => $validation,
+                'base_url' => base_url('/loginAdmin')
+            ]);
         } else {
             $username = $this->request->getVar('username_admin');
             $password = $this->request->getVar('pw_admin');
@@ -100,12 +106,12 @@ class Login extends BaseController {
     
             if (!$userInfo) {
                 session()->setFlashdata('fail', 'Username not found');
-                return redirect()->to('loginPage')->withInput();
+                return redirect()->to(base_url('/loginPage'))->withInput();
             }
     
             if ($password !== $userInfo['password']) {
                 session()->setFlashdata('fail', 'Incorrect password');
-                return redirect()->to('loginPage')->withInput();
+                return redirect()->to(base_url('/loginPage'))->withInput();
             } else {
                 $loggedUserId = $userInfo['id_admin'];
                 $loggedUserFullName = $userInfo['admin_name'];
@@ -115,17 +121,20 @@ class Login extends BaseController {
                 session()->set('IsLoggedIn', true);  // This line sets the IsLoggedIn session variable
     
                 session()->setFlashdata('success', 'Login successful');
-                return redirect()->to('admin/daftarPaket');
+                // return redirect()->to('admin/daftarPaket');
+                return redirect()->to(base_url('admin/daftarPaket'));
             }
         }
     }
     
     public function logout() {
-        if(session()->has('loggedUserId')) {
-            session()->remove('loggedUserId');
-            session()->remove('loggedUserFullName');
-            return redirect()->to(base_url('/'))->with('fail', "You are logged out.");
-        }
+        // if(session()->has('loggedUserId')) {
+        //     session()->remove('loggedUserId');
+        //     session()->remove('loggedUserFullName');
+        //     return redirect()->to(base_url('/'))->with('fail', "You are logged out.");
+        // }
+        session()->remove(['loggedUserId', 'loggedUserFullName', 'IsLoggedIn']);
+        return redirect()->to(base_url('/'))->with('success', 'Logged out successfully');
     }
 }
 ?>

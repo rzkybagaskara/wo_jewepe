@@ -6,7 +6,7 @@
 
             <form action=" <?= base_url('user/tambahPesanan') ?>" method="POST" enctype="multipart/form-data"
                 data-insert-form>
-                <h4 class="text-center">Order Form</h4>
+                <h3 class="text-center">Order Form</h3>
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <div class="row mx-4">
@@ -69,21 +69,21 @@
 
                             <div class="col-12">
                                 <div data-mdb-input-init class="form-outline">
-                                    <div class="form-check">
+                                    <div class="form-check form-check-inline">
                                         <input type="radio" id="form5_regular" class="form-check-input"
                                             name="jenis_paket" value="Regular" />
                                         <label class="form-check-label" for="form5_regular">
                                             Regular
                                         </label>
                                     </div>
-                                    <div class="form-check">
+                                    <div class="form-check form-check-inline">
                                         <input type="radio" id="form5_super" class="form-check-input" name="jenis_paket"
                                             value="Super" />
                                         <label class="form-check-label" for="form5_super">
                                             Super
                                         </label>
                                     </div>
-                                    <div class="form-check">
+                                    <div class="form-check form-check-inline">
                                         <input type="radio" id="form5_premium" class="form-check-input"
                                             name="jenis_paket" value="Premium" />
                                         <label class="form-check-label" for="form5_premium">

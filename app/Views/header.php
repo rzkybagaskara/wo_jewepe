@@ -24,8 +24,10 @@ body {
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #929fba">
         <a class="navbar-brand mt-2 mt-lg-0" href="#">
-            <img src="https://cdn-icons-png.freepik.com/512/2472/2472383.png" height="43" alt="Sigma WO Logo"
-                loading="lazy" />
+            <!-- <img src="https://cdn-icons-png.freepik.com/512/2472/2472383.png" height="43" alt="Sigma WO Logo"
+                loading="lazy" /> -->
+            <img src="https://th.bing.com/th/id/OIG1.HVpg4CfqjBjFGxq1zaZN?w=1024&h=1024&rs=1&pid=ImgDetMain" height="43"
+                alt="Sigma WO Logo" loading="lazy" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

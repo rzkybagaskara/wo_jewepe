@@ -1,7 +1,5 @@
 <?php include('header.php') ?>
 
-<h2 class="text-center mt-4">Cek Status Pesanan</h2>
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -18,20 +16,22 @@
     <link rel="stylesheet" href="<?php echo base_url('/css/datatable.css'); ?>">
 </head>
 
+<h3 class="text-center mt-4">Cek Status Pesanan</h3>
+
 <div class="content-wrapper">
     <section class="content">
         <div class="container-fluid">
             <table class="table table-bordered text-center" id="myTable">
                 <thead>
                     <tr class="bg-dark text-white">
-                        <th scope="col">Nomor</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">No Telp</th>
-                        <th scope="col">Jenis Paket</th>
-                        <th scope="col">Tanggal Pemesanan</th>
-                        <th scope="col">Status Pemesanan</th>
+                        <th class="text-center" scope="col">Nomor</th>
+                        <th class="text-center" scope="col">Nama</th>
+                        <th class="text-center" scope="col">Email</th>
+                        <th class="text-center" scope="col">Alamat</th>
+                        <th class="text-center" scope="col">No Telp</th>
+                        <th class="text-center" scope="col">Jenis Paket</th>
+                        <th class="text-center" scope="col">Tanggal Pemesanan</th>
+                        <th class="text-center" scope="col">Status Pemesanan</th>
                     </tr>
                 </thead>
                 <tbody>
