@@ -82,7 +82,7 @@ class Home extends BaseController {
             $config['file_ext_tolower'] = true;
             $config['file_name'] = str_replace('.', '_', $id);
 
-            $file->move(ROOTPATH . 'upload/post', $newName);
+            $file->move(ROOTPATH . 'public/upload/post', $newName);
 
             $data = [
                 'id_paket' => $id,
@@ -129,12 +129,12 @@ class Home extends BaseController {
                 $prev_image = $data['paket']['gambar'];
                 $newName = $gambar_paket->getRandomName();
 
-                if ($prev_image && file_exists(ROOTPATH . 'upload/post/' . $prev_image)) {
-                    unlink(ROOTPATH . 'upload/post/' . $prev_image);
+                if ($prev_image && file_exists(ROOTPATH . 'public/upload/post/' . $prev_image)) {
+                    unlink(ROOTPATH . 'public/upload/post/' . $prev_image);
                 }
 
                 // Simpen ke folder post
-                $gambar_paket->move(ROOTPATH . 'upload/post',  $newName);
+                $gambar_paket->move(ROOTPATH . 'public/upload/post',  $newName);
 
                 // Update db pake nama baru
                 $data = [
@@ -164,7 +164,7 @@ class Home extends BaseController {
 
         if ($post) {
             $this->paketModel->deletePaket($id);
-            unlink(ROOTPATH . 'upload/post/' . $post['gambar']);
+            unlink(ROOTPATH . 'public/upload/post/' . $post['gambar']);
         }
         //kalau make filters depannya harus kasih admin
         return redirect()->to(base_url('admin/daftarPaket'));
